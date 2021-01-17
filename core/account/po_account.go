@@ -15,8 +15,8 @@ type Account struct {
 	CurrencyCode string          // 货币类型
 	UserId       string          // 用户编号
 	Username     sql.NullString  // 用户名称
-	Balance       decimal.Decimal // 账户可用余额
+	Balance      decimal.Decimal // 账户可用余额
 	Status       int             // 账户状态
-	CreatedAt     time.Time       // 创建时间
-	UpdatedAt     time.Time       // 更新时间∏
+	CreatedAt    time.Time       // 创建时间
+	UpdatedAt    time.Time       // 更新时间∏
 }

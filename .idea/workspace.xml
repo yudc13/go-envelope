@@ -2,17 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="33feb0bc-8e35-4552-be91-fc025066243d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/brun/config.ini" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/account/dao_account.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/account/dao_account_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/account/po_account.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/account.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/account_const.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testx/init.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/account/dao_account_log.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/account/dao_account_log_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/account/po_account_log.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra/base/iris.go" beforeDir="false" afterPath="$PROJECT_DIR$/infra/base/iris.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/account/dao_account.go" beforeDir="false" afterPath="$PROJECT_DIR$/core/account/dao_account.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/account/dao_account_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/core/account/dao_account_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/account/po_account.go" beforeDir="false" afterPath="$PROJECT_DIR$/core/account/po_account.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testx/init.go" beforeDir="false" afterPath="$PROJECT_DIR$/testx/init.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,21 +60,16 @@
       <recent name="$PROJECT_DIR$/core/account" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Test.TestAccountsDao_UpdateBalance in goEnvelope/core/account">
-    <configuration name="go build iris.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Go Test.TestLogDao_GetOne in goEnvelope/core/account">
+    <configuration name="TestAccountDao_GetOne in goEnvelope/core/account" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="go-envelope" />
-      <working_directory value="$PROJECT_DIR$" />
-      <kind value="FILE" />
-      <filePath value="$PROJECT_DIR$/example/iris.go" />
+      <working_directory value="$PROJECT_DIR$/core/account" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="goEnvelope/core/account" />
       <directory value="$PROJECT_DIR$" />
-      <method v="2" />
-    </configuration>
-    <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="go-envelope" />
-      <working_directory value="$PROJECT_DIR$" />
-      <kind value="FILE" />
-      <filePath value="$PROJECT_DIR$/example/main.go" />
-      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <pattern value="^\QTestAccountDao_GetOne\E$" />
       <method v="2" />
     </configuration>
     <configuration name="TestAccountsDao_GetAccountByUserIdAcoountType in goEnvelope/core/account" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
@@ -102,7 +94,7 @@
       <pattern value="^\QTestAccountsDao_UpdateBalance\E$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestDao_Insert in goEnvelope/core/account" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="TestLogDao_GetOne in goEnvelope/core/account" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="go-envelope" />
       <working_directory value="$PROJECT_DIR$/core/account" />
       <framework value="gotest" />
@@ -110,16 +102,27 @@
       <package value="goEnvelope/core/account" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$" />
-      <pattern value="^\QTestDao_Insert\E$" />
+      <pattern value="^\QTestLogDao_GetOne\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestLogDao_Insert in goEnvelope/core/account" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="go-envelope" />
+      <working_directory value="$PROJECT_DIR$/core/account" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="goEnvelope/core/account" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <pattern value="^\QTestLogDao_Insert\E$" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Test.TestLogDao_GetOne in goEnvelope/core/account" />
+        <item itemvalue="Go Test.TestLogDao_Insert in goEnvelope/core/account" />
+        <item itemvalue="Go Test.TestAccountDao_GetOne in goEnvelope/core/account" />
         <item itemvalue="Go Test.TestAccountsDao_UpdateBalance in goEnvelope/core/account" />
         <item itemvalue="Go Test.TestAccountsDao_GetAccountByUserIdAcoountType in goEnvelope/core/account" />
-        <item itemvalue="Go Test.TestDao_Insert in goEnvelope/core/account" />
-        <item itemvalue="Go Build.go build main.go" />
-        <item itemvalue="Go Build.go build iris.go" />
       </list>
     </recent_temporary>
   </component>

@@ -10,10 +10,10 @@ type AccountsDao struct {
 }
 
 // 根据账户编号获取账户信息
-func (dao *AccountsDao) GetOne(accountNo string) *Account {
-	account := &Account{ AccountNo: accountNo}
-	dao.db.Where(account).Find(account)
-	return account
+func (dao *AccountsDao) GetOne(accountNo string) (a *Account, err error) {
+	var account Account
+	err = dao.db.Where("account_no = ?", accountNo).Find(&account).Error
+	return &account, err
 }
 
 // 添加一个资金账户
@@ -21,11 +21,12 @@ func (dao *AccountsDao) Insert(a *Account) (id int64, err error) {
 	tx := dao.db.Create(a)
 	return tx.RowsAffected, tx.Error
 }
+
 // 根据账户编号和账户类型查询账户信息
-func (dao *AccountsDao) GetAccountByUserIdAcoountType(userId string, accountType int) *Account {
-	account := &Account{ UserId: userId, AccountType: accountType }
-	dao.db.Where(account).Find(account)
-	return account
+func (dao *AccountsDao) GetAccountByUserIdAcoountType(userId string, accountType int) (a *Account, err error) {
+	var account Account
+	err = dao.db.Where("user_id = ? AND account_type = ?", userId, accountType).Find(&account).Error
+	return &account, err
 }
 
 // 跟新账户余额
@@ -34,5 +35,3 @@ func (dao *AccountsDao) UpdateBalance(accountNo string, balance decimal.Decimal)
 	tx := dao.db.Exec(sql, balance, accountNo, balance)
 	return tx.RowsAffected, tx.Error
 }
-
-

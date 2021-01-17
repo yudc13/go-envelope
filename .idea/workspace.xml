@@ -2,24 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="33feb0bc-8e35-4552-be91-fc025066243d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/config.ini" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/enum.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/ini.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/iris.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/json.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/mysql.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/validate.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infra/base/db.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infra/base/iris.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infra/base/log.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infra/base/props.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infra/base/validate.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infra/boot.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infra/starter.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/brun/config.ini" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/account/dao_account.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/account/dao_account_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/account/po_account.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/account.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/account_const.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testx/init.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/base/iris.go" beforeDir="false" afterPath="$PROJECT_DIR$/infra/base/iris.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,18 +51,19 @@
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
     <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/testx" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
-  <component name="RunManager" selected="Go Build.go build main.go">
-    <configuration name="go build ini.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="go-envelope" />
-      <working_directory value="$PROJECT_DIR$" />
-      <kind value="FILE" />
-      <filePath value="$PROJECT_DIR$/example/ini.go" />
-      <directory value="$PROJECT_DIR$" />
-      <method v="2" />
-    </configuration>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/testx" />
+      <recent name="$PROJECT_DIR$/brun" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/core/account" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Go Test.TestAccountsDao_UpdateBalance in goEnvelope/core/account">
     <configuration name="go build iris.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="go-envelope" />
       <working_directory value="$PROJECT_DIR$" />
@@ -86,29 +80,46 @@
       <directory value="$PROJECT_DIR$" />
       <method v="2" />
     </configuration>
-    <configuration name="go build mysql.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+    <configuration name="TestAccountsDao_GetAccountByUserIdAcoountType in goEnvelope/core/account" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="go-envelope" />
-      <working_directory value="$PROJECT_DIR$" />
-      <kind value="FILE" />
-      <filePath value="$PROJECT_DIR$/example/mysql.go" />
+      <working_directory value="$PROJECT_DIR$/core/account" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="goEnvelope/core/account" />
       <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <pattern value="^\QTestAccountsDao_GetAccountByUserIdAcoountType\E$" />
       <method v="2" />
     </configuration>
-    <configuration name="go build validate.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+    <configuration name="TestAccountsDao_UpdateBalance in goEnvelope/core/account" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="go-envelope" />
-      <working_directory value="$PROJECT_DIR$" />
-      <kind value="FILE" />
-      <filePath value="$PROJECT_DIR$/example/validate.go" />
+      <working_directory value="$PROJECT_DIR$/core/account" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="goEnvelope/core/account" />
       <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <pattern value="^\QTestAccountsDao_UpdateBalance\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestDao_Insert in goEnvelope/core/account" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="go-envelope" />
+      <working_directory value="$PROJECT_DIR$/core/account" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="goEnvelope/core/account" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <pattern value="^\QTestDao_Insert\E$" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Test.TestAccountsDao_UpdateBalance in goEnvelope/core/account" />
+        <item itemvalue="Go Test.TestAccountsDao_GetAccountByUserIdAcoountType in goEnvelope/core/account" />
+        <item itemvalue="Go Test.TestDao_Insert in goEnvelope/core/account" />
         <item itemvalue="Go Build.go build main.go" />
         <item itemvalue="Go Build.go build iris.go" />
-        <item itemvalue="Go Build.go build validate.go" />
-        <item itemvalue="Go Build.go build mysql.go" />
-        <item itemvalue="Go Build.go build ini.go" />
       </list>
     </recent_temporary>
   </component>

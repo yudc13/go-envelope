@@ -73,4 +73,3 @@ func initIris() *iris.Application {
 	app.Use(logger.New(cfg))
 	return app
 }
-

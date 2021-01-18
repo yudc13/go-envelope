@@ -74,3 +74,23 @@ func TestDomain_Transfer(t *testing.T) {
 		So(account.Balance, ShouldEqual, newAccount.Balance)
 	})
 }
+
+func TestDomain_GetAccountByAccountNo(t *testing.T) {
+	Convey("测试根据账户编号查询账户", t, func() {
+		accountNo := "1nBfueECblmEcNA7hOP1VEQdHSD"
+		domain := &domain{}
+		account, err := domain.GetAccountByAccountNo(accountNo)
+		So(err, ShouldBeNil)
+		t.Logf("account: %+v", account)
+	})
+}
+
+func TestDomain_GetEnvelopeAccountByUserId(t *testing.T) {
+	Convey("测试根据用户Id红包账户", t, func() {
+		userId := "1nBfujkBCWrpD4seMIUt4v7A5f2"
+		domain := &domain{}
+		account, err := domain.GetEnvelopeAccountByUserId(userId)
+		So(err, ShouldBeNil)
+		t.Logf("account: %+v", account)
+	})
+}

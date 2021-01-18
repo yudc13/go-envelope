@@ -41,3 +41,9 @@ const (
 	// 收入
 	FLagTransferIn = 1
 )
+
+// 账户类型
+type AccountType int8
+const (
+	EnvelopeAccount AccountType = 1
+)

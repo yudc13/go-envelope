@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="33feb0bc-8e35-4552-be91-fc025066243d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/core/account/domain_account_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/account/domain_acount.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/account/dao_account_log_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/core/account/dao_account_log_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/account/po_account.go" beforeDir="false" afterPath="$PROJECT_DIR$/core/account/po_account.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/account/po_account_log.go" beforeDir="false" afterPath="$PROJECT_DIR$/core/account/po_account_log.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/account.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/account.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/account/domain_acount.go" beforeDir="false" afterPath="$PROJECT_DIR$/core/account/domain_acount.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/account_const.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/account_const.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +55,7 @@
       <recent name="$PROJECT_DIR$/core/account" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Test.TestDomain_Transfer in goEnvelope/core/account">
+  <component name="RunManager" selected="Go Test.TestDomain_GetEnvelopeAccountByUserId in goEnvelope/core/account">
     <configuration name="TestDomain_Create in goEnvelope/core/account" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="go-envelope" />
       <working_directory value="$PROJECT_DIR$/core/account" />
@@ -69,6 +65,28 @@
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$" />
       <pattern value="^\QTestDomain_Create\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestDomain_GetAccountByAccountNo in goEnvelope/core/account" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="go-envelope" />
+      <working_directory value="$PROJECT_DIR$/core/account" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="goEnvelope/core/account" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <pattern value="^\QTestDomain_GetAccountByAccountNo\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestDomain_GetEnvelopeAccountByUserId in goEnvelope/core/account" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="go-envelope" />
+      <working_directory value="$PROJECT_DIR$/core/account" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="goEnvelope/core/account" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <pattern value="^\QTestDomain_GetEnvelopeAccountByUserId\E$" />
       <method v="2" />
     </configuration>
     <configuration name="TestDomain_Transfer in goEnvelope/core/account" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
@@ -82,17 +100,6 @@
       <pattern value="^\QTestDomain_Transfer\E$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestLogDao_GetOne in goEnvelope/core/account" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="go-envelope" />
-      <working_directory value="$PROJECT_DIR$/core/account" />
-      <framework value="gotest" />
-      <kind value="PACKAGE" />
-      <package value="goEnvelope/core/account" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$" />
-      <pattern value="^\QTestLogDao_GetOne\E$" />
-      <method v="2" />
-    </configuration>
     <configuration name="TestLogDao_GetOneByTradeNo in goEnvelope/core/account" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="go-envelope" />
       <working_directory value="$PROJECT_DIR$/core/account" />
@@ -104,24 +111,13 @@
       <pattern value="^\QTestLogDao_GetOneByTradeNo\E$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestLogDao_Insert in goEnvelope/core/account" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="go-envelope" />
-      <working_directory value="$PROJECT_DIR$/core/account" />
-      <framework value="gotest" />
-      <kind value="PACKAGE" />
-      <package value="goEnvelope/core/account" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$" />
-      <pattern value="^\QTestLogDao_Insert\E$" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Test.TestDomain_GetEnvelopeAccountByUserId in goEnvelope/core/account" />
+        <item itemvalue="Go Test.TestDomain_GetAccountByAccountNo in goEnvelope/core/account" />
         <item itemvalue="Go Test.TestDomain_Transfer in goEnvelope/core/account" />
         <item itemvalue="Go Test.TestDomain_Create in goEnvelope/core/account" />
         <item itemvalue="Go Test.TestLogDao_GetOneByTradeNo in goEnvelope/core/account" />
-        <item itemvalue="Go Test.TestLogDao_GetOne in goEnvelope/core/account" />
-        <item itemvalue="Go Test.TestLogDao_Insert in goEnvelope/core/account" />
       </list>
     </recent_temporary>
   </component>

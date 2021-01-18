@@ -49,7 +49,7 @@ func (d *domain) createAccountLog() {
 	d.accountLog.ChangeType = services.AccountAcreated
 	d.accountLog.ChangeFlag = services.FlagAccountCrated
 }
-
+// 创建账户
 func (d *domain) Create(dto services.AccountDTO) (*services.AccountDTO, error) {
 	// 账户持久化对象
 	d.account = Account{}
@@ -139,4 +139,39 @@ func (d *domain) Transfer(dto services.AccountTransferDTO) (status services.Tran
 		return nil
 	})
 	return status, err
+}
+
+// 根据账户编号查询账户信息
+func (d *domain) GetAccountByAccountNo(accountNo string) (*services.AccountDTO, error) {
+	dto := &services.AccountDTO{}
+	err := base.DB().Transaction(func(tx *gorm.DB) error {
+		accountDao := AccountsDao{db: tx}
+		account, err := accountDao.GetOne(accountNo)
+		if err != nil {
+			return err
+		}
+		if account.Id <= 0 {
+			return errors.New("账户不存在")
+		}
+		dto = account.ToDTO()
+		return nil
+	})
+	return dto, err
+}
+
+func (d *domain) GetEnvelopeAccountByUserId(userId string) (*services.AccountDTO, error) {
+	dto := &services.AccountDTO{}
+	err := base.DB().Transaction(func(tx *gorm.DB) error {
+		accountDao := AccountsDao{db: tx}
+		account, err := accountDao.GetAccountByUserIdAcoountType(userId, int(services.EnvelopeAccount))
+		if err != nil {
+			return err
+		}
+		if account.Id <= 0 {
+			return errors.New("账户不存在")
+		}
+		dto = account.ToDTO()
+		return nil
+	})
+	return dto, err
 }

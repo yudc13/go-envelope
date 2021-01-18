@@ -39,7 +39,7 @@ func TestLogDao_Insert(t *testing.T) {
 }
 
 func TestLogDao_GetOne(t *testing.T) {
-	dao := LogDao{ db: base.DB() }
+	dao := LogDao{db: base.DB()}
 	Convey("测试根据流水编号查询账户流水", t, func() {
 		log, err := dao.GetOne("1nCLQQsGQd9MLbOLOClIa5kseeM")
 		So(err, ShouldBeNil)
@@ -48,7 +48,7 @@ func TestLogDao_GetOne(t *testing.T) {
 }
 
 func TestLogDao_GetOneByTradeNo(t *testing.T) {
-	dao := LogDao{ db: base.DB() }
+	dao := LogDao{db: base.DB()}
 	Convey("测试根据交易编号查询账户流水", t, func() {
 		log, err := dao.GetOneByTradeNo("1nCLQUUop8mtnWpKrtBeKp239eU")
 		So(err, ShouldBeNil)

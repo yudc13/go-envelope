@@ -1,7 +1,12 @@
 package services
 
-import "time"
+import (
+	"database/sql"
+	"github.com/shopspring/decimal"
+	"time"
+)
 
+// 账户服务层接口
 type AccountService interface {
 	// 创建账户
 	CreateAccount(dto AccountCreateDTO) (*AccountDTO, error)
@@ -17,7 +22,7 @@ type AccountService interface {
 type TradeParticipator struct {
 	AccountNo string
 	UserId    string
-	Username  string
+	Username  sql.NullString
 }
 
 // 账户转账
@@ -25,23 +30,25 @@ type AccountTransferDTO struct {
 	TradeNo     string
 	TradeBody   TradeParticipator
 	TradeTarget TradeParticipator
-	AmountStr   string
-	ChangeType  int
-	ChangeFlag  int
+	Amount      decimal.Decimal
+	ChangeType  ChangeType
+	ChangeFlag  ChangeFlag
 	Desc        string
 }
 
 type AccountCreateDTO struct {
 	UserId       string
-	Username     string
+	Username     sql.NullString
 	AccountName  string
-	AccountType  ChangeType
-	CurrencyType ChangeFlag
-	Amount       string
+	AccountType  int
+	CurrencyCode string
+	Balance      decimal.Decimal // 账户可用余额
+	Status       int             // 账户状态
 }
 
 type AccountDTO struct {
 	AccountCreateDTO
 	AccountNo string
-	CreateAt  time.Time
+	CreatedAt time.Time // 创建时间
+	UpdatedAt time.Time // 更新时间∏
 }

@@ -26,6 +26,21 @@ type Log struct {
 	CreatedAt       time.Time           // 交易时间
 }
 
+func (po *Log) FromTransferDTO(dto *services.AccountTransferDTO) {
+	po.TradeNo = dto.TradeNo
+	po.UserId = dto.TradeBody.UserId
+	po.Username = dto.TradeBody.Username
+	po.AccountNo = dto.TradeBody.AccountNo
+	po.TargetUserId = dto.TradeTarget.UserId
+	po.TargetAccountNo = dto.TradeTarget.AccountNo
+	po.TargetUsername = dto.TradeTarget.Username
+	po.AccountNo = dto.TradeTarget.AccountNo
+	po.Amount = dto.Amount
+	po.ChangeType = dto.ChangeType
+	po.ChangeFlag = dto.ChangeFlag
+	po.Desc = dto.Desc
+}
+
 func (Log) TableName() string {
 	return "account_logs"
 }

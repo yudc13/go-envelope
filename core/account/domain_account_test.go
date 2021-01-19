@@ -18,8 +18,8 @@ func TestDomain_Create(t *testing.T) {
 				String: "测试用户3",
 				Valid:  true,
 			},
-			Balance: decimal.NewFromFloat(3400),
-			Status:  1,
+			Amount: decimal.NewFromFloat(3400),
+			Status: 1,
 		},
 	}
 	Convey("测试创建账户", t, func() {
@@ -27,7 +27,7 @@ func TestDomain_Create(t *testing.T) {
 		result, err := domain.Create(dto)
 		So(err, ShouldBeNil)
 		So(result.UserId, ShouldEqual, dto.UserId)
-		So(result.Balance, ShouldEqual, dto.Balance)
+		So(result.Amount, ShouldEqual, dto.Amount)
 		So(result.Status, ShouldEqual, dto.Status)
 	})
 }
@@ -35,25 +35,25 @@ func TestDomain_Create(t *testing.T) {
 func TestDomain_Transfer(t *testing.T) {
 	accountNo := "1nBfueECblmEcNA7hOP1VEQdHSD"
 	targetAccountNo := "1nCXBnM3ZNXx8WDpSbAfrF0DYCo"
-	accountDao := AccountsDao{ db: base.DB() }
+	accountDao := AccountsDao{db: base.DB()}
 	account, _ := accountDao.GetOne(accountNo)
 	targetAccount, _ := accountDao.GetOne(targetAccountNo)
 	dto := services.AccountTransferDTO{
-		TradeNo:     ksuid.New().Next().String(),
-		TradeBody:   services.TradeParticipator{
+		TradeNo: ksuid.New().Next().String(),
+		TradeBody: services.TradeParticipator{
 			AccountNo: account.AccountNo,
-			Username: account.Username,
-			UserId: account.UserId,
+			Username:  account.Username,
+			UserId:    account.UserId,
 		},
 		TradeTarget: services.TradeParticipator{
 			AccountNo: targetAccount.AccountNo,
-			Username: targetAccount.Username,
-			UserId: targetAccount.UserId,
+			Username:  targetAccount.Username,
+			UserId:    targetAccount.UserId,
 		},
-		Amount:      decimal.NewFromFloat(10),
-		ChangeType:  services.EnvelopeOutgoing,
-		ChangeFlag:  services.FlagTransferOut,
-		Desc:        "测试转账-支出",
+		Amount:     decimal.NewFromFloat(10),
+		ChangeType: services.EnvelopeOutgoing,
+		ChangeFlag: services.FlagTransferOut,
+		Desc:       "测试转账-支出",
 	}
 	Convey("测试转账-余额充足", t, func() {
 		domain := &domain{}

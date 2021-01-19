@@ -2,6 +2,7 @@ package account
 
 import (
 	"github.com/shopspring/decimal"
+	"goEnvelope/services"
 	"gorm.io/gorm"
 )
 
@@ -23,7 +24,7 @@ func (dao *AccountsDao) Insert(a *Account) (id int64, err error) {
 }
 
 // 根据账户编号和账户类型查询账户信息
-func (dao *AccountsDao) GetAccountByUserIdAcoountType(userId string, accountType int) (a *Account, err error) {
+func (dao *AccountsDao) GetAccountByUserIdAcoountType(userId string, accountType services.AccountType) (a *Account, err error) {
 	var account Account
 	err = dao.db.Where("user_id = ? AND account_type = ?", userId, accountType).Find(&account).Error
 	return &account, err

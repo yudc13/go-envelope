@@ -28,7 +28,7 @@ func (v *ValidateStarter) Init(ctx infra.StarterContext) {
 	ZH := zh.New()
 	uni := ut.New(ZH, ZH)
 	translator, found := uni.GetTranslator("zh")
-	validate := validator.New()
+	validate = validator.New()
 	if found {
 		err := zh_translations.RegisterDefaultTranslations(validate, translator)
 		if err != nil {

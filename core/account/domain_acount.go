@@ -49,6 +49,7 @@ func (d *domain) createAccountLog() {
 	d.accountLog.ChangeType = services.AccountAcreated
 	d.accountLog.ChangeFlag = services.FlagAccountCrated
 }
+
 // 创建账户
 func (d *domain) Create(dto services.AccountDTO) (*services.AccountDTO, error) {
 	// 账户持久化对象
@@ -163,7 +164,7 @@ func (d *domain) GetEnvelopeAccountByUserId(userId string) (*services.AccountDTO
 	dto := &services.AccountDTO{}
 	err := base.DB().Transaction(func(tx *gorm.DB) error {
 		accountDao := AccountsDao{db: tx}
-		account, err := accountDao.GetAccountByUserIdAcoountType(userId, int(services.EnvelopeAccount))
+		account, err := accountDao.GetAccountByUserIdAcoountType(userId, services.EnvelopeAccount)
 		if err != nil {
 			return err
 		}

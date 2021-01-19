@@ -14,8 +14,9 @@ type AccountService interface {
 	Transfer(dto AccountTransferDTO) (TransferedStatus, error)
 	// 储值
 	StoreValue(dto AccountTransferDTO) (TransferedStatus, error)
+	GetAccount(accountNo string) (*AccountDTO, error)
 	// 根据用户Id获取红包账户信息
-	GetEnvelopeAccountByUserId(userId string) *AccountDTO
+	GetEnvelopeAccountByUserId(userId string) (*AccountDTO, error)
 }
 
 // 账户交易
@@ -37,12 +38,12 @@ type AccountTransferDTO struct {
 }
 
 type AccountCreateDTO struct {
-	UserId       string
-	Username     sql.NullString
-	AccountName  string
-	AccountType  int
-	CurrencyCode string
-	Balance      decimal.Decimal // 账户可用余额
+	UserId       string          `validate:"required"`
+	Username     sql.NullString  `validate:"required"`
+	AccountName  string          `validate:"required"`
+	AccountType  AccountType     `validate:"required"`
+	CurrencyCode string          `validate:"required"`
+	Amount       decimal.Decimal `validate:"required"` // 账户可用余额
 	Status       int             // 账户状态
 }
 

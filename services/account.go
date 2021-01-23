@@ -6,6 +6,13 @@ import (
 	"time"
 )
 
+// 对外暴露账户应用服务
+var IAccountService AccountService
+
+func GetAccountService() AccountService {
+	return IAccountService
+}
+
 // 账户服务层接口
 type AccountService interface {
 	// 创建账户
@@ -39,7 +46,7 @@ type AccountTransferDTO struct {
 
 type AccountCreateDTO struct {
 	UserId       string          `validate:"required"`
-	Username     sql.NullString  `validate:"required"`
+	Username     string  `validate:"required"`
 	AccountName  string          `validate:"required"`
 	AccountType  AccountType     `validate:"required"`
 	CurrencyCode string          `validate:"required"`

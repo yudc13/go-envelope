@@ -6,11 +6,20 @@ import (
 	"github.com/sirupsen/logrus"
 	"goEnvelope/infra/base"
 	"goEnvelope/services"
+	"sync"
 )
 
 type service struct{}
 
+// 这里没有实际作用只是为了快速实现AccountService接口的方法
 var _ services.AccountService = new(service)
+var once sync.Once
+func init()  {
+	// 只被实例化一次
+	once.Do(func() {
+		services.IAccountService = new(service)
+	})
+}
 
 // 创建账户
 func (s *service) CreateAccount(dto services.AccountCreateDTO) (*services.AccountDTO, error) {

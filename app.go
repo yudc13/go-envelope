@@ -1,6 +1,8 @@
 package envelope
 
 import (
+	_ "goEnvelope/apis/web"
+	_ "goEnvelope/core/account"
 	"goEnvelope/infra"
 	"goEnvelope/infra/base"
 )
@@ -15,4 +17,5 @@ func init() {
 	infra.Register(&base.ValidateStarter{})
 	// 注册iris
 	infra.Register(&base.IrisStarter{})
+	infra.Register(&infra.WebApiStarter{})
 }

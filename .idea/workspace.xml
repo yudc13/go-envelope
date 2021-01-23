@@ -2,16 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="33feb0bc-8e35-4552-be91-fc025066243d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/core/account/service.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/account/service_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apis/web/account.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/infra/base/resp.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/infra/initailizer.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/infra/web.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/account/dao_account.go" beforeDir="false" afterPath="$PROJECT_DIR$/core/account/dao_account.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/account/domain_account_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/core/account/domain_account_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/account/domain_acount.go" beforeDir="false" afterPath="$PROJECT_DIR$/core/account/domain_acount.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.go" beforeDir="false" afterPath="$PROJECT_DIR$/app.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/account/po_account.go" beforeDir="false" afterPath="$PROJECT_DIR$/core/account/po_account.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra/base/validate.go" beforeDir="false" afterPath="$PROJECT_DIR$/infra/base/validate.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/account/service.go" beforeDir="false" afterPath="$PROJECT_DIR$/core/account/service.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/account/service_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/core/account/service_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/config.ini" beforeDir="false" afterPath="$PROJECT_DIR$/example/config.ini" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/account.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/account.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/account_const.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/account_const.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,11 +48,13 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="configurable..is.expanded" value="false" />
+    <property name="configurable.GoLibrariesConfigurable.is.expanded" value="true" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
     <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/testx" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="com.goide.configuration.GoLibrariesConfigurableProvider" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -62,16 +65,14 @@
       <recent name="$PROJECT_DIR$/core/account" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Test.TestService_Transfer in goEnvelope/core/account">
-    <configuration name="TestDomain_GetAccountByAccountNo in goEnvelope/core/account" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Go Build.go build main.go">
+    <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="go-envelope" />
-      <working_directory value="$PROJECT_DIR$/core/account" />
-      <framework value="gotest" />
-      <kind value="PACKAGE" />
-      <package value="goEnvelope/core/account" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/example/main.go" />
+      <package value="goEnvelope" />
       <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$" />
-      <pattern value="^\QTestDomain_GetAccountByAccountNo\E$" />
       <method v="2" />
     </configuration>
     <configuration name="TestDomain_GetEnvelopeAccountByUserId in goEnvelope/core/account" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
@@ -85,17 +86,6 @@
       <pattern value="^\QTestDomain_GetEnvelopeAccountByUserId\E$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestDomain_Transfer in goEnvelope/core/account" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="go-envelope" />
-      <working_directory value="$PROJECT_DIR$/core/account" />
-      <framework value="gotest" />
-      <kind value="PACKAGE" />
-      <package value="goEnvelope/core/account" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$" />
-      <pattern value="^\QTestDomain_Transfer\E$" />
-      <method v="2" />
-    </configuration>
     <configuration name="TestService_CreateAccount in goEnvelope/core/account" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="go-envelope" />
       <working_directory value="$PROJECT_DIR$/core/account" />
@@ -105,6 +95,17 @@
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$" />
       <pattern value="^\QTestService_CreateAccount\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestService_GetEnvelopeAccountByUserId in goEnvelope/core/account" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="go-envelope" />
+      <working_directory value="$PROJECT_DIR$/core/account" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="goEnvelope/core/account" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <pattern value="^\QTestService_GetEnvelopeAccountByUserId\E$" />
       <method v="2" />
     </configuration>
     <configuration name="TestService_Transfer in goEnvelope/core/account" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
@@ -120,11 +121,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Build.go build main.go" />
         <item itemvalue="Go Test.TestService_Transfer in goEnvelope/core/account" />
+        <item itemvalue="Go Test.TestService_GetEnvelopeAccountByUserId in goEnvelope/core/account" />
         <item itemvalue="Go Test.TestService_CreateAccount in goEnvelope/core/account" />
         <item itemvalue="Go Test.TestDomain_GetEnvelopeAccountByUserId in goEnvelope/core/account" />
-        <item itemvalue="Go Test.TestDomain_GetAccountByAccountNo in goEnvelope/core/account" />
-        <item itemvalue="Go Test.TestDomain_Transfer in goEnvelope/core/account" />
       </list>
     </recent_temporary>
   </component>

@@ -28,7 +28,10 @@ func (po *Account) FromDTO(dto *services.AccountDTO) {
 	po.AccountType = dto.AccountType
 	po.CurrencyCode = dto.CurrencyCode
 	po.UserId = dto.UserId
-	po.Username = dto.Username
+	po.Username = sql.NullString{
+		String: dto.Username,
+		Valid: true,
+	}
 	po.Balance = dto.Amount
 	po.Status = dto.Status
 	po.CreatedAt = dto.CreatedAt
@@ -42,7 +45,7 @@ func (po *Account) ToDTO() *services.AccountDTO {
 	dto.AccountType = po.AccountType
 	dto.CurrencyCode = po.CurrencyCode
 	dto.UserId = po.UserId
-	dto.Username = po.Username
+	dto.Username = po.Username.String
 	dto.Amount = po.Balance
 	dto.Status = po.Status
 	dto.CreatedAt = po.CreatedAt
